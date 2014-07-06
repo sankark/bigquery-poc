@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <parent>
+      <groupId>app.skeletons</groupId>
+      <artifactId>bigquery-poc-parent</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+   </parent>
+   <packaging>war</packaging>
+   <artifactId>bigquery-poc</artifactId>
+   <properties>
+      <project.version>0.0.1-SNAPSHOT</project.version>
+      <bigquery.version>v2-rev138-1.18.0-rc</bigquery.version>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <aspectj.version>1.7.3</aspectj.version>
+      <sonar.language>java</sonar.language>
+      <jersey.version>1.17.1</jersey.version>
+      <spring.version>3.2.4.RELEASE</spring.version>
+       <!-- GAE Plugin ((almost) Any GAE Version) -->
+    <gae.version>1.9.1</gae.version>
+    <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+    <gae.home>${user.home}/.m2/repository/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk/appengine-java-sdk-${gae.version}</gae.home>
+   </properties>
+
+<pluginRepositories>
+   <pluginRepository>
+     <id>sonatype.snapshots</id>
+     <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+   </pluginRepository>
+</pluginRepositories>
+   <dependencies>
+               <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+         </dependency>
+         <dependency>
+    <groupId>commons-codec</groupId>
+    <artifactId>commons-codec</artifactId>
+    <version>1.3</version>
+</dependency>
+    <dependency>
+      <groupId>com.google.apis</groupId>
+      <artifactId>google-api-services-bigquery</artifactId>
+      <version>${bigquery.version}</version>
+    </dependency>
+       <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>net.sf.jsr107cache</groupId>
+      <artifactId>jsr107cache</artifactId>
+      <version>1.1</version>
+    </dependency>
+        <dependency>
+      <groupId>com.google.api-client</groupId>
+      <artifactId>google-api-client-appengine</artifactId>
+      <version>1.18.0-rc</version>
+    </dependency>
+        <dependency>
+      <groupId>com.google.api-client</groupId>
+      <artifactId>google-api-client-jackson2</artifactId>
+      <version>1.18.0-rc</version>
+    </dependency>
+<dependency>
+    <groupId>org.codehaus.jackson</groupId>
+    <artifactId>jackson-core-asl</artifactId>
+    <version>[1.4,)</version>
+    <type>jar</type>
+    <scope>compile</scope>
+</dependency>
+      <dependency>
+         <groupId>com.google.code.twig</groupId>
+         <artifactId>twig-persist</artifactId>
+         <version>2.0-beta4</version>
+      </dependency>
+      <dependency>
+         <groupId>commons-fileupload</groupId>
+         <artifactId>commons-fileupload</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>javax.servlet</groupId>
+         <artifactId>servlet-api</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.httpcomponents</groupId>
+         <artifactId>httpclient</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.httpcomponents</groupId>
+         <artifactId>httpmime</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>javax.annotation</groupId>
+         <artifactId>jsr250-api</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-core</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-context</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-web</artifactId>
+      </dependency>
+            <!-- Spring MVC framework --> 
+      <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${spring.version}</version>
+      </dependency>
+      
+      <!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>3.1.4.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>3.1.4.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>3.1.4.RELEASE</version>
+		</dependency>
+              <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-tools-sdk</artifactId>
+            <version>${gae.version}</version>
+        </dependency>
+      <!-- Jackson JSON Mapper -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.7.1</version>
+		</dependency>
+		
+		    <dependency>
+        <groupId>com.google.appengine</groupId>
+        <artifactId>appengine-api-1.0-sdk</artifactId>
+        <version>${gae.version}</version>
+    </dependency>
+
+
+   </dependencies>
+   
+   <build>
+      <plugins>
+         <plugin>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.1.1</version>
+            <configuration>
+               <attachClasses>true</attachClasses>
+            </configuration>
+         </plugin>
+         <plugin>
+   <groupId>com.google.appengine</groupId>
+   <artifactId>appengine-maven-plugin</artifactId>
+   <version>1.8.8</version>
+</plugin>
+<plugin>
+    <groupId>net.kindleit</groupId>
+    <artifactId>maven-gae-plugin</artifactId>
+    <version>0.9.7-SNAPSHOT</version>
+    <configuration>
+        <unpackVersion>${gae.version}</unpackVersion>
+        <appDir>${webappDirectory}</appDir>
+        <sdkDir>${gae.home}</sdkDir>
+
+        <!-- Add credentials to ~/.m2/settings.xml <id>appengine-credentials</id> -->
+        <serverId>appengine-credentials</serverId>
+        <splitJars>true</splitJars>
+    </configuration>
+   
+    <dependencies>
+        <!-- Google App Engine API -->
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-1.0-sdk</artifactId>
+            <version>${gae.version}</version>
+        </dependency>
+        <!-- Google App Engine Runtime Dependencies -->
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-jta_1.1_spec</artifactId>
+            <version>1.1.1</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-jpa_3.0_spec</artifactId>
+            <version>1.1.1</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.jdo</groupId>
+            <artifactId>jdo2-api</artifactId>
+            <version>2.3-eb</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-core</artifactId>
+            <version>1.1.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.appengine.orm</groupId>
+            <artifactId>datanucleus-appengine</artifactId>
+            <version>1.0.10</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-jpa</artifactId>
+            <version>1.1.5</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- App Engine Runtime Dependencies -->
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-tools-sdk</artifactId>
+            <version>${gae.version}</version>
+        </dependency>
+  
+    </dependencies>
+    
+</plugin>
+
+      </plugins>
+   
+</build>
+</project>

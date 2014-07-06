@@ -1,0 +1,24 @@
+<div class="col-md-12">
+            <div class="block block-fill-white">
+                <div class="header"><h2>Servers</h2></div>
+                <div class="content controls">
+                    <div class="form-row">
+                        <div class="col-md-3">Jenkins Url:</div>
+                        <div class="col-md-5"><a  href="{{ci.jenkinsUrl}}/jenkins" style=" color: #0013EE; " class="btn btn-default btn-block btn-clean">{{ci.jenkinsUrl}}</a></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-3">GitHub Url:</div>
+                        <div class="col-md-5"><a href="{{ci.githubUrl}}"  style=" color: #0013EE; " class="btn btn-default btn-block btn-clean">{{ci.githubUrl}}</a></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-3">Artifactary Url:</div>
+                        <div class="col-md-5"><a href="{{ci.artifactUrl}}:8081/nexus" style=" color: #0013EE; " class="btn btn-default btn-block btn-clean">{{ci.artifactUrl}}</a></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-3">Sonar Url:</div>
+                        <div class="col-md-5"><a href="{{ci.reportUrl}}:9000" style=" color: #0013EE; " class="btn btn-default btn-block btn-clean">{{ci.reportUrl}}</a></div>
+                    </div>
+                </div>
+            </div>
+</div>
+ 

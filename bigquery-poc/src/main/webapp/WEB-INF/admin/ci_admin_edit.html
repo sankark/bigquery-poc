@@ -1,0 +1,54 @@
+<div class="col-md-12">
+            <div class="block block-fill-white">
+                <div class="header"><h2>Servers</h2></div>
+                <div class="content controls">
+                    <div class="form-row">
+                        <div class="col-md-2">Jenkins InstanceId:</div>
+                        <div class="col-md-3"><input ng-model = "ci.jenkinsId" type="text" class="form-control" value=""></div>
+                        <div class="col-md-2">Jenkins EIP:</div>
+                        <div class="col-md-3"><input ng-model = "ci.jenkinsEIP" type="text" class="form-control" value=""></div>
+						<div class="col-md-2">
+							<div class="make-switch" toggle-switch model="switchStatus1"></div>
+						</div>
+							
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-2">gitlab InstanceId:</div>
+                        <div class="col-md-3"><input ng-model = "ci.githubId" type="text" class="form-control" value=""></div>
+                        <div class="col-md-2">gitlab EIP:</div>
+                        <div class="col-md-3"><input ng-model = "ci.githubEIP" type="text" class="form-control" value=""></div>
+						<div class="col-md-2">
+							<div class="make-switch" toggle-switch model="switchStatus2"></div>
+						</div>
+							
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-2">Artifact InstanceId:</div>
+                        <div class="col-md-3"><input ng-model = "ci.artifactId" type="text" class="form-control" value=""></div>
+                        <div class="col-md-2">Artifact EIP:</div>
+                        <div class="col-md-3"><input ng-model = "ci.artifactEIP" type="text" class="form-control" value=""></div>
+						<div class="col-md-2">
+							<div class="make-switch" toggle-switch model="switchStatus3"></div>
+						</div>
+							
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-2">Sonar InstanceId:</div>
+                        <div class="col-md-3"><input ng-model = "ci.reportId" type="text" class="form-control" value=""></div>
+                        <div class="col-md-2">Sonar EIP:</div>
+                        <div class="col-md-3"><input ng-model = "ci.reportEIP" type="text" class="form-control" value=""></div>
+						<div class="col-md-2">
+							<div class="make-switch" toggle-switch model="switchStatus4"></div>
+						</div>
+							
+                    </div>
+					<div class="form-row">
+                        <div class="col-md-1"><button type="button" ng-click="save()" class="btn btn-success">Start All</button></div>
+                         <div class="col-md-2"><button type="button" ng-click="attachEIP()" class="btn btn-success">Attach Elastic IP's</button></div>
+                        
+                        <div class="col-md-1"><button type="button" ng-click="stop_all()" class="btn btn-danger">Stop All</button></div>
+                    </div>
+                </div>
+            </div>
+</div>
+ 
