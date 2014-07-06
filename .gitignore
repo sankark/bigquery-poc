@@ -1,0 +1,16 @@
+*.properties
+!*.xml
+.pom.xml
+.idea/*
+*.iml
+.settings
+.project
+.classpath
+*.*/.settings
+*.*/.project
+*.*/.classpath
+*.*/target
+*.*/target
+vendor/bundle
+Gemfile.lock
+client_secrets.json
